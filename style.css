@@ -645,122 +645,104 @@ body {
 
 /* <!-- --------------Curved Carousal Section---------- --> */
 
-.durability-section {
-  /* background-color: #0a076d; */
+.curved_container {
   height: 100vh;
-  max-width: 100vw;
+  width: 100vw;
+  margin: 0 auto;
   position: relative;
-  background-image: url("./images/bg.jpg");
+  overflow: hidden;
+  background:url("./images/bg.jpg");
+  background-position: bottom;
+  background-size: cover;
+  position: relative;
 }
 
 .durability-header {
   color: white;
   font-size: clamp(2.5rem, 6vw, 4.5rem);
-  padding: 10% 10%;
+  padding: 0 10%;
   text-align: center;
   font-weight: 900;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 45%;
-}
-
-.slider-section {
-  height: 50%;
-  /* position: relative; */
   width: 100%;
-}
-
-.durable-tyres-card-container {
-  color: white;
-  height: fit-content;
-  /* width: 6%; */
-}
-
-.durable-tyres-card-container {
+  padding-bottom: 10%;
   position: absolute;
-  min-width: 350px;
-  cursor: pointer;
-  bottom: 50%;
-}
-
-.durable-tyre-image {
-  display: flex;
-  background-color: white;
-  justify-content: center;
-  position: relative;
-}
-
-.durable-tyres-card-container img {
-  width: 80%;
-  pointer-events: none;
-  z-index: 1;
-  cursor: pointer;
-}
-
-.durable-tyre-text-container {
-  display: flex;
-  justify-content: space-between;
-  font-size: clamp(0.9rem, 3vw, 1.25rem);
-  text-transform: uppercase;
-}
-
-.durable-hover-button {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
-  background-color: #000000c3;
-  padding: 2% 3%;
-  border-radius: 25%;
-  z-index: 9;
-  width: 40%;
-  opacity: 0;
-  transition: 0.5s ease;
+  top: 30%;
+  left: 50%;
+  /* z-index: 90; */
 }
 
-.durable-tyres-card-container:hover .durable-hover-button {
+.carrousel-wrappper {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  border-radius: 50%;
+  transition: all 0.3s linear;
+  display: flex;
+  gap: 10px;
+}
+
+.curveimage {
+  width: 100%;
+  height: 90%;
+  object-fit: contain;
+  background-color: #ffffff;
+}
+
+.single-item {
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  transition: all 0.3s linear;
+  transition-property: height, width;
+  /* border-radius: 50%; */
+  overflow: hidden;
+  /* background: #ffffff; */
+  color: #CDA050;
+}
+
+.hoverCurve{
+  color: rgb(255, 255, 255);
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 45%;
+  left: 50%;
+  padding: 8px 20px;
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.731);
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: all ease 0.8s;
+  opacity: 0;
+}
+
+.single-item:hover .hoverCurve {
   opacity: 1;
   cursor: pointer;
-  transition: all 300ms;
 }
 
-.durable-hover-button:active {
-  filter: brightness(80%);
+
+
+.empty-box{
+  background: transparent;
 }
 
-.durable-card {
+.sliderContCurveText{
+  display: flex;
+  justify-content: space-between;
   /* position: absolute; */
-  /* left: -30%; */
-  height: 100px;
-  width: 100px;
-  position: relative;
-  /* background-color: aqua; */
+  z-index: 99;
+  font-weight: 400;
+  font-size: 0.8rem;
 }
 
-/* Media query for smaller screen sizes */
-@media screen and (max-width: 768px) {
-  .durable-tyres-card-container {
-    min-width: 250px; /* Adjust min-width for smaller screens */
-  }
+.sliderContCurveText h1{
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
 }
-
-/* Media query for even smaller screen sizes */
-@media screen and (max-width: 480px) {
-  .durable-tyres-card-container {
-    min-width: 180px; /* Adjust min-width for even smaller screens */
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .durable-tyres-card-container {
-    min-width: 180px; /* Adjust min-width for even smaller screens */
-  }
-}
-
 /* <!-- --------------Curved Carousal Section---------- --> */
 
 /* ----------------Bull Image CSS ----------------- */
@@ -967,6 +949,33 @@ body {
 
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
+
+  #section img {
+    width: 90%;
+  }
+
+  .bottomTextSection {
+    width: 80%;
+    margin-top: 4vh;
+  }
+
+  .nameLogo {
+    width: 55%;
+    display: block;
+    margin: 0 auto;
+    height: 10vh;
+  }
+
+  .logoTextSection h6 {
+    font-size: 1rem;
+    padding-bottom: 5px;
+  }
+
+  .logoTextSection p {
+    font-size: 0.8rem;
+    line-height: 1.8rem;
+  }
+
   .ecosystemContainer {
     height: 90vh;
     align-items: center;
