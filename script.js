@@ -400,6 +400,7 @@ function logoShrink() {
       pin: true,
       pinSpacing: true,
       invalidateOnRefresh: true,
+      markers:true
     },
     defaults: { ease: "none" },
   });
@@ -415,10 +416,30 @@ function logoShrink() {
     }
   );
 
+//   tl1.to(".bullimg", { duration: 0.8, width: "15%", y: -250 }, "+.6");
+//   tl1.to(".nameLogo", { duration: 0.8, y: -500 }, "+.6");
+//   tl1.to(".logoTextSection", { duration: 0.8, y: -450 }, "+.9");
+// }
+
+
+ // Check the screen width
+ if (window.innerWidth < 600) {
+  tl1.to(".bullimg", { duration: 0.8, width: "55%", y: -300 }, "+.6");
+  tl1.to(".nameLogo", { duration: 0.8, y: -650 }, "+.6");
+  tl1.to(".logoTextSection", { duration: 0.8, y: -600 }, "+.9");
+// } else if (window.innerWidth >= 600 && window.innerWidth < 1200) {
+//   gsap.to(images, {
+//     xPercent: -150 * (images.length - 1),
+//     ...animationProps,
+//   });
+} else {
   tl1.to(".bullimg", { duration: 0.8, width: "15%", y: -250 }, "+.6");
   tl1.to(".nameLogo", { duration: 0.8, y: -500 }, "+.6");
   tl1.to(".logoTextSection", { duration: 0.8, y: -450 }, "+.9");
 }
+}
+
+
 logoShrink();
 
 function ecosystem() {

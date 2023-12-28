@@ -746,6 +746,9 @@ body {
   .durable-tyres-card-container {
     min-width: 250px; /* Adjust min-width for smaller screens */
   }
+  .cursor {
+    display: none;
+  }
 }
 
 /* Media query for even smaller screen sizes */
@@ -967,6 +970,33 @@ body {
 
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
+
+  #section img {
+    width: 90%;
+  }
+
+  .bottomTextSection {
+    width: 80%;
+    margin-top: 2vh;
+  }
+
+  .nameLogo {
+    width: 55%;
+    display: block;
+    margin: 0 auto;
+    height: 10vh;
+  }
+
+  .logoTextSection h6 {
+    font-size: 1rem;
+    padding-bottom: 5px;
+  }
+
+  .logoTextSection p {
+    font-size: 0.8rem;
+    line-height: 1.8rem;
+  }
+
   .ecosystemContainer {
     height: 90vh;
     align-items: center;
