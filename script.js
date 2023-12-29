@@ -215,7 +215,7 @@ function horizontalScroll() {
     });
   } else {
     gsap.to(images, {
-      xPercent: -60 * (images.length - 1),
+      xPercent: -70 * (images.length - 1),
       ...animationProps,
     });
   }
@@ -296,63 +296,61 @@ horizontalScroll();
 // horizontalScroll();
 
 function curvedScroll() {
- 
-const slides = gsap.utils.toArray(".single-item");
+  const slides = gsap.utils.toArray(".single-item");
 
-const animation = () => {
-  gsap.set(".carrousel-wrappper", {
-    xPercent: -50,
-    yPercent: -4,
-    width: `${slides.length * 350}px`,
-    height: `${slides.length * 350}px`
-  });
-  circleSetup(".carrousel-wrappper", ".single-item", -50);
-
-  // Add ScrollTrigger
-  ScrollTrigger.create({
-    trigger: "#main",
-    start: "30.5% top",
-    end: "34% top",
-    pin: true,
-    markers: true,
-    onUpdate: (self) => {
-      gsap.set(".carrousel-wrappper", { rotation: self.progress * 200 });
-    }
-  });
-};
-
-
-
-/// set slides around the circle
-const circleSetup = (circle, items, percentageValue) => {
-  const mainCicle = document.querySelector(circle);
-  const circleItem = gsap.utils.toArray(items);
-
-  const radius = mainCicle.offsetWidth / 2;
-  const center = mainCicle.offsetWidth / 2;
-  const total = circleItem.length;
-  const slice = (-1.3 * Math.PI) / total;
-
-  circleItem.forEach((item, i) => {
-    const angle = i * slice;
-
-    const x = center + radius * Math.sin(angle);
-    const y = center - radius * Math.cos(angle);
-
-    gsap.set(item, {
-      rotation: angle + "_rad",
-      xPercent: percentageValue,
-      yPercent: percentageValue,
-      x,
-      y
+  const animation = () => {
+    gsap.set(".carrousel-wrappper", {
+      xPercent: -50,
+      yPercent: -4,
+      width: `${slides.length * 350}px`,
+      height: `${slides.length * 350}px`,
     });
-  });
-};
+    circleSetup(".carrousel-wrappper", ".single-item", -50);
 
-window.addEventListener("load", () => {
-  animation();
-  gsap.set("main", { autoAlpha: 1 });
-});
+    // Add ScrollTrigger
+    ScrollTrigger.create({
+      pinSpacing: "true",
+      trigger: "#main",
+      start: "30.5% top",
+      end: "34% top",
+      pin: true,
+      markers: true,
+      onUpdate: (self) => {
+        gsap.set(".carrousel-wrappper", { rotation: self.progress * 200 });
+      },
+    });
+  };
+
+  /// set slides around the circle
+  const circleSetup = (circle, items, percentageValue) => {
+    const mainCicle = document.querySelector(circle);
+    const circleItem = gsap.utils.toArray(items);
+
+    const radius = mainCicle.offsetWidth / 2;
+    const center = mainCicle.offsetWidth / 2;
+    const total = circleItem.length;
+    const slice = (-1.3 * Math.PI) / total;
+
+    circleItem.forEach((item, i) => {
+      const angle = i * slice;
+
+      const x = center + radius * Math.sin(angle);
+      const y = center - radius * Math.cos(angle);
+
+      gsap.set(item, {
+        rotation: angle + "_rad",
+        xPercent: percentageValue,
+        yPercent: percentageValue,
+        x,
+        y,
+      });
+    });
+  };
+
+  window.addEventListener("load", () => {
+    animation();
+    gsap.set("main", { autoAlpha: 1 });
+  });
 }
 
 curvedScroll();
@@ -369,7 +367,7 @@ function bullStory() {
   gsap.to(".bullStoryOverlay", {
     scrollTrigger: {
       trigger: "#main",
-      markers:true,
+      markers: true,
       start: "46% top",
       end: "52% top",
       scrub: 2,
@@ -403,7 +401,7 @@ function logoShrink() {
       pin: true,
       pinSpacing: true,
       invalidateOnRefresh: true,
-      markers:true
+      markers: true,
     },
     defaults: { ease: "none" },
   });
@@ -419,29 +417,27 @@ function logoShrink() {
     }
   );
 
-//   tl1.to(".bullimg", { duration: 0.8, width: "15%", y: -250 }, "+.6");
-//   tl1.to(".nameLogo", { duration: 0.8, y: -500 }, "+.6");
-//   tl1.to(".logoTextSection", { duration: 0.8, y: -450 }, "+.9");
-// }
+  //   tl1.to(".bullimg", { duration: 0.8, width: "15%", y: -250 }, "+.6");
+  //   tl1.to(".nameLogo", { duration: 0.8, y: -500 }, "+.6");
+  //   tl1.to(".logoTextSection", { duration: 0.8, y: -450 }, "+.9");
+  // }
 
-
- // Check the screen width
- if (window.innerWidth < 600) {
-  tl1.to(".bullimg", { duration: 0.8, width: "55%", y: -300 }, "+.6");
-  tl1.to(".nameLogo", { duration: 0.8, y: -650 }, "+.6");
-  tl1.to(".logoTextSection", { duration: 0.8, y: -600 }, "+.9");
-// } else if (window.innerWidth >= 600 && window.innerWidth < 1200) {
-//   gsap.to(images, {
-//     xPercent: -150 * (images.length - 1),
-//     ...animationProps,
-//   });
-} else {
-  tl1.to(".bullimg", { duration: 0.8, width: "15%", y: -250 }, "+.6");
-  tl1.to(".nameLogo", { duration: 0.8, y: -500 }, "+.6");
-  tl1.to(".logoTextSection", { duration: 0.8, y: -450 }, "+.9");
+  // Check the screen width
+  if (window.innerWidth < 600) {
+    tl1.to(".bullimg", { duration: 0.8, width: "55%", y: -300 }, "+.6");
+    tl1.to(".nameLogo", { duration: 0.8, y: -650 }, "+.6");
+    tl1.to(".logoTextSection", { duration: 0.8, y: -600 }, "+.9");
+    // } else if (window.innerWidth >= 600 && window.innerWidth < 1200) {
+    //   gsap.to(images, {
+    //     xPercent: -150 * (images.length - 1),
+    //     ...animationProps,
+    //   });
+  } else {
+    tl1.to(".bullimg", { duration: 0.8, width: "15%", y: -250 }, "+.6");
+    tl1.to(".nameLogo", { duration: 0.8, y: -500 }, "+.6");
+    tl1.to(".logoTextSection", { duration: 0.8, y: -450 }, "+.9");
+  }
 }
-}
-
 
 logoShrink();
 

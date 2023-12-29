@@ -651,7 +651,7 @@ body {
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  background:url("./images/bg.jpg");
+  background: url("./images/bg.jpg");
   background-position: bottom;
   background-size: cover;
   position: relative;
@@ -659,8 +659,8 @@ body {
 
 .durability-header {
   color: white;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  padding: 0 10%;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  padding: 0 5%;
   text-align: center;
   font-weight: 900;
   display: flex;
@@ -701,13 +701,13 @@ body {
   /* border-radius: 50%; */
   overflow: hidden;
   /* background: #ffffff; */
-  color: #CDA050;
+  color: #cda050;
 }
 
-.hoverCurve{
+.hoverCurve {
   color: rgb(255, 255, 255);
   position: absolute;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   top: 45%;
   left: 50%;
   padding: 8px 20px;
@@ -724,13 +724,11 @@ body {
   cursor: pointer;
 }
 
-
-
-.empty-box{
+.empty-box {
   background: transparent;
 }
 
-.sliderContCurveText{
+.sliderContCurveText {
   display: flex;
   justify-content: space-between;
   /* position: absolute; */
@@ -739,7 +737,7 @@ body {
   font-size: 0.8rem;
 }
 
-.sliderContCurveText h1{
+.sliderContCurveText h1 {
   color: rgb(255, 255, 255);
   text-transform: uppercase;
 }
@@ -806,7 +804,7 @@ body {
 
 #section {
   position: relative;
-  height: 100vh;
+  min-height: 120vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -942,14 +940,12 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .card{
+  .card {
     width: 35%;
   }
 }
 
-
 @media screen and (min-width: 320px) and (max-width: 768px) {
-
   #section img {
     width: 90%;
   }
@@ -983,7 +979,7 @@ body {
     gap: 2rem;
   }
 
-  .card-title{
+  .card-title {
     font-size: 0.5rem;
   }
 
@@ -1075,8 +1071,8 @@ body {
 
 /* ---------global presence------- */
 .globalPresence {
-  padding-top:20% ;
-  height: 100vh;
+  padding-top: 5%;
+  /* height: 100vh; */
   width: 100vw;
   overflow-x: hidden;
   /* position: relative; */
@@ -1093,14 +1089,9 @@ body {
   padding-left: 10%;
 }
 
-
-
-
 .globalPresenceImage img {
   height: auto;
   width: 100%;
-  
-
 }
 
 .globalPresenceImage {
@@ -1108,16 +1099,16 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  .globalPresence{
+  .globalPresence {
     gap: 2rem;
-  }  
-  
-  .globalPresenceContent{
-      text-align: center;
-      flex-direction: column;
-      padding-left: 0%;
-      align-items: center;
-    }
+  }
+
+  .globalPresenceContent {
+    text-align: center;
+    flex-direction: column;
+    padding-left: 0%;
+    align-items: center;
+  }
 }
 
 /* ---------global presence------- */
